@@ -1,0 +1,46 @@
+extends ../layout/main
+
+block head
+  - var title = 'Сторінка не знайдена'
+  - var bodyClass = ''
+block content
+  .not-found
+    .container
+      .row.row--aic
+        .col-lg-6
+          .not-found__title Помилка 404
+          h1 Сторінка не знайдена
+          p Неправильно набрано адресу або такої <br>сторінки на сайті більше не існує
+          a.btn.btn--long(href="/") Перейти на головну
+        .col-lg-6
+          .not-found__img: +imggen('404.png')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

@@ -1,0 +1,2405 @@
+/* lead-up style */
+//retina
+// https://github.com/strues/retinajs
+// для использования доставляем дата атрибут data-rjs="3", в бекграундах используем миксин
+// +retina('../img/general/', 3, cover, center center no-repeat)
+//@import "../libs/retina/_retina.sass"
+
+//+triangle(right, 5px, 5px, #fff)
+
+// @import "../libs/pixel-glass-js-master/styles"
+// @import "pixel-glass"
+
+// @import "smart-grid"
+
+@import "variabls"
+@import "mixin"
+@import "font"
+@import "sprite"
+//@include retina-sprites($retina-groups) //раскоменить для ретины
+@import "same_style"
+
+/* lead-up style end */
+
+/* blocks style */
+
+/* head */
+@import "../pug/modules/header/header"
+
+/* foot */
+@import "../pug/modules/foot/foot"
+
+/* forms */
+@import "../pug/modules/forms/forms"
+
+/* menu */
+@import "../pug/modules/menu/menu"
+
+/* blocks style end*/
+
+//smartgrid settings
+// .container
+//   +container()
+// .row
+//   +row()
+// .col
+//   +col()
+//   +cols(12)
+
+/* page style */
+
+.main-slider
+  position: relative
+  color: #fff
+  .swiper-slide
+    position: relative
+    padding: 60px 0 70px
+    background-repeat: no-repeat
+    background-position: center 0
+    background-size: cover
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+      background: rgba(0, 0, 0, 0.4)
+    +max(991)
+      padding: 40px 0
+  .swiper-pagination
+    margin-top: 10px
+  .container
+    position: relative
+    z-index: 2
+.main-slider__box
+  height: 760px
+  display: flex
+  flex-direction: column
+  +max(1200)
+    height: 600px
+  +max(991)
+    height: 400px
+.main-slider__title
+  font-size: 90px
+  line-height: 1.2
+  font-weight: 800
+  text-transform: uppercase
+  &::after
+    content: ''
+    // max-width: 612px
+    width: 52.3%
+    height: 20px
+    display: block
+    margin-top: 30px
+    background: $green
+  +max(1200)
+    font-size: 70px
+  +max(991)
+    font-size: 50px
+  +max(768)
+    font-size: 40px
+    word-break: break-word
+.main-slider__foot
+  // margin-top: 420px
+  display: flex
+  justify-content: space-between
+  margin-top: auto
+  padding-top: 30px
+.main-slider__control
+  position: absolute
+  bottom: 70px
+  left: 0
+  right: 0
+  pointer-events: none
+  +max(991)
+    bottom: 40px
+  +max(576)
+    display: none
+.main-slider__control-box
+  display: flex
+  justify-content: flex-end
+  
+.main-slider__control-item
+  +size(60)
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 0
+  cursor: pointer
+  background: #FFFFFF
+  box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.1)
+  border-radius: 12px
+  pointer-events: auto
+  svg
+    +size(16)
+    fill:  #BAC2BD
+    +trs(fill)
+  &:hover
+    svg
+      fill: $green
+  &:first-child
+    margin-right: 20px
+
+
+
+.swiper-pagination
+  position: static
+  display: flex
+  justify-content: center
+.swiper-pagination-bullet
+  +size(14)
+  margin: 6px !important
+  background: $grey
+  opacity: 1
+.swiper-pagination-bullet-active
+  background: $green
+
+
+.services
+  background-image: url(../img/general/goal.png)
+  background-repeat: no-repeat
+  background-position: calc(50vw - 100px) calc(100% - 20px)
+  +max(1200)
+    h2
+      margin-bottom: 20px
+  +max(576)
+    h2
+      margin-bottom: 10px
+.services__list
+  [class*="col-"]
+    margin-top: 50px
+  +max(1200)
+    [class*="col-"]
+      margin-top: 30px
+
+.services__item
+  position: relative
+  height: 100%
+  min-height: 515px
+  display: block
+  padding: 30px 15px
+  font-weight: 800
+  font-size: 20px
+  line-height: 1.2
+  text-decoration: none
+  color: #fff
+  text-transform: uppercase
+  border-radius: 16px
+  background-repeat: no-repeat
+  background-position: center 0
+  background-size: cover
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    border-radius: 16px
+    background: rgba(0, 152, 70, 0.8)
+    opacity: 0
+    // +trs(opacity)
+    +trs()
+    // transform: scale(0)
+    // backdrop-filter: blur(20px)
+    transition: opacity .25s linear, transform .25s linear
+    will-change: transform
+  +min(993)
+    &:hover
+      &::before
+        opacity: 1
+        // transform: scale(1)
+      .services__item-list
+        opacity: 1
+        // transform: scale(1)
+  +max(992)
+    &::before
+      opacity: 1
+      transform: scale(1)
+    .services__item-list
+      opacity: 1
+      transform: scale(1)
+.services__item-title
+  position: relative
+  z-index: 3
+  display: block
+  color: $def
+  font-size: 26px
+  text-align: center
+  span
+    display: inline-block
+    padding: 5px 30px
+    padding-bottom: 8px
+    border-radius: 16px
+    background: #fff
+  +max(1560)
+    font-size: 22px
+    span
+      padding-left: 15px
+      padding-right: 15px
+
+.services__item-list
+  position: relative
+  z-index: 2
+  display: block
+  text-align: center
+  opacity: 0
+  // transform: scale(0)
+  // +trs(opacity)
+  transition: opacity .25s linear, transform .25s linear
+  will-change: transform
+.services__item-list-item
+  display: block
+  margin-top: 27px
+  &:first-child
+    margin-top: 24px
+
+
+.about-block
+  h2
+    margin-bottom: 50px
+    +max(768)
+      margin-bottom: 30px
+.about-block__img
+  font-size: 0
+  img
+    border-radius: 16px
+  +max(991)
+    margin-top: 45px
+.about-block__action
+  display: flex
+  align-items: center
+  margin-top: 50px
+  .btn
+    margin-right: 20px
+  .sc
+    padding-top: 0
+  +max(1200)
+    display: block
+    .sc
+      margin-top: 25px
+
+
+.about-block__list
+  padding-top: 23px
+  font-weight: 500
+  font-size: 16px
+  line-height: 1.2
+  text-align: center
+  [class*="col-"]
+    margin-top: 50px
+  figure
+    margin: 0
+    svg
+      +size(130)
+      +max(460)
+        +size(90)
+  figcaption
+    margin-top: 34px
+  +max(460)
+    word-break: break-word
+
+
+
+
+.partners
+  h2
+    margin-bottom: 40px
+
+figure
+  margin: 0
+// .filter__box
+  display: flex
+  flex-wrap: wrap
+
+.filter__items
+  display: flex
+  overflow: hidden
+  display: none
+  background: silver
+
+.filter__box-item
+  // width: 205px
+  // flex-shrink: 0
+  // margin-right: 30px
+  padding: 10px
+  padding-bottom: 20px
+  text-align: center
+  font-size: 16px
+  line-height: 1.2
+  color: $grey
+  figcaption
+    word-break: break-word
+
+.swiper-container-free-mode>.swiper-wrapper
+  transition-timing-function: linear !important
+
+.filter__box-item-img
+  height: 110px
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 10px
+  cursor: pointer
+  font-size: 0
+  border-radius: 24px
+  box-shadow: none
+  +trs
+  img
+    max-width: 100%
+    max-height: 100%
+    object-fit: contain
+  &:hover
+    box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+
+
+.filter__controll-box
+  display: flex
+  flex-wrap: wrap
+  margin-left: -10px
+  margin-right: -10px
+  padding-top: 30px
+.filter__btn
+  margin: 10px
+  +max(991)
+    width: calc(50% - 20px)
+    max-width: 100%
+    &:first-child
+      width: calc(100% - 20px)
+  +max(576)
+    // width: calc(100% - 20px)
+    height: 50px
+    font-size: 14px
+    // &:first-child
+      width: calc(100% - 20px)
+  color: $def
+  border-color: #fff
+  &:hover
+    color: $green
+    border-color: $green
+  &.active
+    color: $green
+    border-color: $green
+    box-shadow: none
+
+
+
+.contact-block
+  position: relative
+  font-weight: bold
+  background-image: url('../img/general/contact_bg.png')
+  background-repeat: no-repeat
+  background-position: calc(50% + 738px) 39%
+  +max(1400)
+    background-position: calc(50% + 830px) 39%
+  +max(1200)
+    background-position: calc(50% + 528px) calc(100% - 90px)
+  // &::before
+    content: ''
+    position: absolute
+    top: 22%
+    left: calc(50% - 325px)
+    height: 351px
+    width: calc(100vw - 51vw + 336px)
+    background: #F7F8F7
+    border-radius: 16px 0  0 16px
+  +max(768)
+    background: none
+.map
+  position: relative
+  z-index: 10
+  +max(1200)
+    margin-top: 50px
+  +max(768)
+    display: none
+.map-dot
+  cursor: pointer
+
+.map__img
+  position: relative
+  z-index: 4
+  font-size: 0
+  svg
+    max-width: 100%
+    width: auto
+    height: auto
+.map__popups
+  height: 0
+  width: 0
+
+.map__popup
+  position: absolute
+  max-width: 285px
+  width: 100%
+  padding: 20px
+  font-size: 14px
+  font-weight: 500
+  +lh(19,14)
+  background: #FFFFFF
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 12px
+  opacity: 0
+  visibility: hidden
+  +trs(opacity)
+  &::before
+    content: ''
+    position: absolute
+    top: 100%
+    left: 50%
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 8px 6px 0 6px
+    border-color: #fff transparent transparent transparent
+    transform: translateX(-50%)
+  &.active
+    opacity: 1
+    visibility: visible
+  &.pos-fix
+    &::before
+      transform: translateX(calc(-50% + 33px))
+
+.map__popup-img
+  +img(56.25)
+  img
+    border-radius: 12px
+.map__popup-desc
+  margin-top: 15px
+
+.map__popup-phones
+  margin-top: 20px
+  font-weight: bold
+  a
+    display: block
+    margin-top: 4px
+    color: inherit
+    text-decoration: none
+    +trs(color)
+    &:hover
+      color: $green
+.map__popup-close
+  position: absolute
+  top: -26px
+  right: 8px
+  +size(36)
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 0
+  cursor: pointer
+  background: #009846
+  box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.1)
+  border-radius: 12px
+  svg
+    +size(16)
+    fill: #fff
+
+
+.contact-block__row
+  padding-top: 20px
+.contact-block__desc
+  margin-top: 110px
+  +max(1200)
+    margin-top: 30px
+.contact-block__desc-item
+  display: flex
+  color: inherit
+  text-decoration: none
+  +trs(color)
+
+  &>svg
+    +size(20)
+    flex-shrink: 0
+    margin-top: 7px
+    margin-right: 20px
+    fill: $green
+
+  small
+    display: block
+    font-weight: normal
+    color: $grey
+    font-size: 14px
+    line-height: 1.3
+  &:not(:first-child)
+    margin-top: 40px
+    +max(991)
+      margin-top: 20px
+a.contact-block__desc-item
+  &:hover
+    color: $green
+    // svg
+      fill: currentColor
+
+.contact-block__desc-item--accent
+  align-items: center
+  +max(420)
+    display: block
+  a
+    display: inline-flex
+    align-items: center
+    text-decoration: none
+    color: $def
+    +trs(color)
+    &:hover
+      color: $green
+      svg
+        fill: currentColor
+  .svg--phone
+    +size(20)
+    flex-shrink: 0
+    margin-top: 7px
+    margin-right: 20px
+    fill: $green
+  a
+    // padding-top: 4px
+    svg
+      margin: 0
+      margin-left: 8px
+      fill: $grey
+      +trs(fill)
+
+.partners-page__filter-controll
+  display: flex
+  align-items: center
+  justify-content: space-between
+  p
+    margin: 0
+  +max(768)
+    display: block
+    .nice-select
+      max-width: 100%
+      margin-top: 20px
+
+.partners-page__filter-box
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin-left: -10px
+  margin-right: -10px
+  padding-top: 10px
+  font-size: 14px
+  font-weight: 500
+  +lh(21,14)
+  .filter__box-item
+    // width: calc(100% / 7 - 20px)
+    flex-basis: 190px
+    flex-grow: 1
+    margin: 10px
+    margin-bottom: 70px
+    padding: 0 5px
+    // background: silver
+    word-break: break-word
+    +max(768)
+      // width: calc(100% / 2 - 20px)
+      // flex-basis: initial
+      margin-bottom: 30px
+  .filter__box-item-img
+    height: 200px
+    // background: silver
+    +max(768)
+      height: 110px
+.partners-page__filter-action
+  text-align: center  
+  +max(768)
+    padding-top: 20px
+
+.partners-aspect
+  font-size: 16px
+  a
+    display: inline-block
+    font-size: 18px
+    font-weight: 500
+    color: inherit
+    text-decoration: none
+
+
+
+
+.benefit
+  min-height: 414px
+  display: flex
+  flex-wrap: wrap
+  margin-left: -10px
+  margin-right: -10px
+  padding-top: 20px
+  font-size: 16px
+  font-weight: 500
+  line-height: 1.4
+  text-align: center
+  
+.benefit__item
+  width: calc(100% / 3 - 20px)
+  display: flex
+  flex-direction: column
+  margin: 10px
+  margin-top: 20px
+  padding-bottom: 40px
+  padding-left: 20px
+  padding-right: 20px
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 24px
+  +max(768)
+    width: calc(100% / 1 - 20px)
+
+.benefit__item-ico
+  height: 210px
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 10px
+  font-size: 0
+
+.benefit__item-desc
+  flex-grow: 1
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+.become-part-form
+  margin-top: 45px
+
+
+.map-mobile
+  display: none
+  +max(768)
+    display: block
+
+.accordion
+  padding-top: 50px
+  font-size: 16px
+  line-height: 1.4
+// necessary style
+.accordion__item
+  border-bottom: 1px solid #E1E6E3
+  &:first-child
+    border-top: 1px solid #E1E6E3
+.accordion__content
+  display: none
+.accordion__title
+  position: relative
+  display: flex
+  align-items: center
+  cursor: pointer
+.accordion__arrow
+  display: block
+  flex-shrink: 0
+  margin-left: auto
+  padding-left: 15px
+  font-size: 0
+  line-height: 0
+  // background: silver
+  span
+    +size(24)
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid #E1E6E3
+    // outline: $ou
+  svg
+    +size(10)
+    fill: #000
+    +trs(transform)
+.svg--down
+  display: block
+  width: 15px
+  height: 15px
+  // fill: #fff
+.accordion__item--active
+  .accordion__title
+    .svg--pointer
+      fill: $green
+  .accordion__arrow
+    svg
+      transform: rotate(180deg)
+  .accordion__content
+    display: block
+// necessary style end
+
+.accordion__title
+  padding: 15px 0
+  user-select: none
+  .svg--pointer
+    +size(20)
+    align-self: start
+    flex-shrink: 0
+    margin-top: 4px
+    margin-right: 10px
+    fill: #E1E6E3
+    +trs(fill)
+
+
+.accordion__content
+  padding-bottom: 15px
+  .map__popup-phones
+    display: flex
+    margin: 0
+    font-size: 20px
+    svg
+      +size(20)
+      flex-shrink: 0
+      margin-top: 10px
+      margin-right: 10px
+      fill: $green
+  .contact-block__desc-item
+    font-size: 16px
+    svg
+      margin-top: 4px
+
+
+.about-top-img
+  text-align: right
+  font-size: 0
+  +max(1200)
+    text-align: center
+.goals
+  background-image: url('../img/general/goal.png')
+  background-repeat: no-repeat
+  background-position: 10vw calc(50% + 76px)
+  h2
+    margin-bottom: 40px
+  +max(768)
+    margin-top: 0
+.goals__collage
+  font-size: 0
+  +max(1200)
+    text-align: center
+.goals__options
+  width: 100%
+  max-width: 710px
+  counter-reset: section
+  +max(1200)
+    margin-left: auto
+    margin-right: auto
+    margin-top: 40px
+  +max(575)
+    font-size: 16px
+    line-height: 1.4
+.goals__options-item
+  position: relative
+  padding: 42px
+  padding-left: 115px
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 24px
+  background: #fff
+  +max(575)
+    padding: 24px
+    padding-left: 75px
+    &::before
+      left: 15px
+  &:not(:first-child)
+    margin-top: 10px
+  p
+    margin: 0
+  &::before
+    position: absolute
+    top: 50%
+    left: 35px
+    // background: silver
+    counter-increment: section
+    content: counter(section)
+    font-weight: 900
+    font-size: 70px
+    line-height: 1
+    transform: translateY(calc(-50% - 6px))
+
+
+
+@supports (-webkit-text-stroke: 1px $green)
+  .goals__options-item 
+    &::before
+      -webkit-text-stroke: 1px $green
+      -webkit-text-fill-color: white
+
+.history
+  h2
+    margin-bottom: 55px
+
+.history__control
+  // height: 260px
+  background: #F6F6F6
+  border-radius: 12px
+
+.history__years
+  height: 208px
+  font-size: 0
+  .swiper-slide
+    border: 1px solid rgba(230, 233, 231, 0)
+    border-left: 0
+    border-right: 0
+    +trs(border)
+  .swiper-slide-active
+    border-color: rgba(230, 233, 231, 1)
+    .history__years-item
+      svg
+        transform: scale(1.2)
+        path
+          fill: $def
+
+  .swiper-slide-prev,.swiper-slide-next
+    .history__years-item
+      svg
+        transform: scale(1.1)
+        path
+          fill: #B8B8B8
+
+.history__control-btn
+  height: 26px
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 0
+  cursor: pointer
+  background: #F6F6F6
+  +trs(background)
+  svg
+    +size(16)
+    fill: #001E0E
+    +trs(fill)
+  &:hover
+    background: $green
+    svg
+      fill: #fff
+
+.history__control-btn--prev
+  border-radius: 12px 12px 0 0
+.history__control-btn--next 
+  border-radius: 0 0 12px 12px
+
+
+.history__years-item
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  svg
+    +trs
+    path
+      fill: #D1D1D1
+      +trs(fill)
+
+
+.history__content
+  // height: 300px
+  padding-left: 30px
+  .swiper-wrapper
+    align-items: center
+    +max(575)
+      align-items: flex-start
+    
+  +max(991)
+    padding-left: 0
+  +max(575)
+    margin-top: 20px
+.history__content-item
+  display: flex
+  align-items: center
+  +max(1200)
+    display: block
+.history__content-img
+  max-width: 380px
+  width: 100%
+  flex-shrink: 0
+  +img(55)
+  img
+    border-radius: 12px
+  +max(1200)
+    img
+      border-radius: 12px 12px 0 0 
+.history__content-desc
+  width: 100%
+  padding: 35px
+  padding-left: 60px
+  background: #F4F7F6
+  border-radius: 0 12px 12px 0
+  b,strong
+    display: block
+    margin-bottom: 20px
+    font-size: 20px
+    font-weight: bold
+  p
+    margin: 0
+  +max(1200)
+    border-radius: 0 12px 12px 12px
+    padding: 25px
+  +max(575)
+    b,strong
+      margin-bottom: 10px
+      line-height: 1.3
+
+.values
+  padding-bottom: 200px
+  background-image: url('../img/general/values_bg.png')
+  background-repeat: no-repeat
+  background-position: calc(50vw - 10px) 60px
+  h2
+    // margin-bottom: 40px
+  +max(991)
+    padding-bottom: 60px
+    background: none
+    h2
+      margin-bottom: 20px
+.values__img
+  font-size: 0
+  +max(991)
+    margin-top: 25px
+
+.prod__header-top
+  margin-top: 20px
+  margin-bottom: 15px
+
+.prod__header-nav
+  margin: 15px 0
+  font-size: 16px
+  background: #fff
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  white-space: nowrap
+  ul
+    display: flex
+    // flex-wrap: wrap
+    margin: 0
+    padding: 0
+    li
+      margin: 0
+      margin-right: 20px
+      padding: 0
+      border-bottom: 2px solid rgba(255, 255, 255, 0)
+      +trs(border)
+      &::before
+        display: none
+      &.active
+        color: $green
+        border-color: $green
+  a
+    display: block
+    padding: 10px 20px
+    color: currentColor
+    text-decoration: none
+    +trs(color)
+    &:hover
+      color: $green
+    span
+      color: $grey
+.prod__header-nav-box
+  // overflow-x: auto
+  .simplebar-track
+    top: calc(100% + 2px)
+    background: #eaeeec
+    border-radius: 5px
+  .simplebar-scrollbar
+    &::before
+      background: $green
+      opacity: 1
+.prod__main
+  margin-top: 40px
+  padding-bottom: 45px
+  .reviews
+    +max(991)
+      margin-top: 50px
+.prod__media
+  display: flex
+  align-items: flex-start
+  font-size: 0
+  +max(1200)
+    flex-wrap: wrap
+    margin-bottom: 40px
+    // flex-direction: column-reverse
+  .swiper-scrollbar
+    width: 12px
+    height: 790px
+    margin-right: 20px
+    flex-shrink: 0
+    background: #EAEEEC
+    border-radius: 5px
+    +max(1500)
+      height: 680px
+    +max(1400)
+      height: 528px
+    +max(1200)
+      height: 5px
+      width: 100%
+      order: 3
+      margin: 0
+      margin-top: 10px
+  .swiper-scrollbar-drag
+    left: 2px
+    width: 8px
+    background: $green
+.prod__media-nav
+  height: 790px
+  width: 100px
+  margin: 0
+  margin-right: 10px
+  flex-shrink: 0
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 5
+    height: 98px
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)
+    pointer-events: none
+  +max(1540)
+    height: 680px
+  +max(1400)
+    height: 528px
+  +max(1200)
+    height: auto
+    width: 100%
+    order: 2
+    margin: 0
+    margin-top: 15px
+    &::before
+      content: ''
+      height: auto
+      width: 98px
+      left: auto
+      top: 0
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)
+
+
+
+  .swiper-slide-thumb-active
+    .prod__media-item
+      border-color: $green
+  .prod__media-item
+    width: 100%
+    height: 100%
+    cursor: pointer
+    border-radius: 12px
+    border: 2px solid rgba(255, 255, 255, 0)
+    overflow: hidden
+    +trs(border)
+    // +img(100)
+    // img
+      border-radius: 12px
+
+.prod__media-gallery
+  flex-grow: 1
+  border-radius: 12px
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.2)
+  border-radius: 24px
+  .prod__media-item
+    +img(100)
+    +zoom
+  +max(1200)
+    width: 100%
+    order: 1
+
+
+.prod__info-block
+  padding: 30px 40px
+  font-size: 16px
+  line-height: 1.3
+  background: #FFFFFF
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 24px
+  &:not(:first-child)
+    margin-top: 10px
+  p
+    margin: 0
+    margin-top: 10px
+  .rating
+    margin-top: 8px
+    font-size: 14px
+    svg
+      +size(16)
+  +max(991)
+    padding: 20px
+  // +max(575)
+    padding: 15px 10px
+
+.prod__info-block--product
+  display: flex
+  align-items: center
+  padding: 20px
+
+.prod__img
+  width: 100px
+  margin-right: 20px
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 12px
+  +img(100)
+  img
+    border-radius: 12px
+
+.prod__title
+  font-weight: bold
+
+
+.prod__info-block--cost
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .prod__price
+    margin-top: -7px
+    line-height: 1
+  .prod__status
+    padding: 0 10px
+    +max(500)
+      margin-top: 10px
+      padding: 0
+  .btn
+    max-width: 168px
+  +max(1500)
+    // display: block
+    flex-wrap: wrap
+    .btn
+      max-width: 100%
+      margin-top: 20px
+  +max(500)
+    display: block
+.prod__price
+  font-weight: bold
+  font-size: 32px
+  line-height: 1.4
+  span
+    font-size: 0.57em
+
+.prod__status
+  // white-space: nowrap
+  font-size: 14px
+  font-weight: 500
+  svg
+    +size(24)
+    flex-shrink: 0
+    fill: currentColor
+    vertical-align: text-top
+
+.prod__status--ok
+  color: $green
+
+
+.prod__info-block--manufact
+  .prod__img
+    img
+      object-fit: contain
+  .btn
+    margin-top: 20px
+    font-size: 13px
+  +max(500)
+    .row
+      flex-direction: column-reverse
+    .prod__img
+      margin-bottom: 10px
+    .form-row
+      flex-wrap: wrap
+      .col
+        width: 100%
+        flex-basis: 100%
+    .btn
+      max-width: 100%
+.prod__info-block--review
+
+.review-answer
+  // outline: $ou 
+  padding-top: 15px
+  padding-left: 30px
+  // padding-bottom: 20px
+  border-left: 1px solid $grey
+  .review__desc
+    padding-bottom: 20px
+    border-bottom: 1px solid $grey
+  .rating__desc
+    margin: 0
+  &.last
+    .review__desc
+      border: 0
+  +max(991)
+    padding-left: 15px
+
+.review__head
+  display: flex
+  align-items: baseline
+  justify-content: space-between
+  flex-wrap: wrap
+  b
+    padding-right: 10px
+    font-size: 18px
+    font-weight: bold
+.review__head-box
+  display: flex
+  align-items: baseline
+  align-items: center
+  // margin-left: auto
+  &>svg
+    margin-left: 10px
+    cursor: pointer
+    path
+      +trs(fill)
+    &:hover
+      path
+        fill: $orange
+  .rating
+    margin-top: 0
+  +max(500)
+    // flex-wrap: wrap
+    margin-top: 5px
+.review__desc
+  margin-top: 5px
+  line-height: 1.5
+
+.review__feeling
+  margin-top: 15px
+  line-height: 1.5
+  p
+    margin: 0
+
+.review__foot
+  display: flex
+  flex-wrap: wrap
+  // margin-top: 20px
+  svg
+    +size(24)
+  .vote
+    margin-top: 20px
+  &+.review-answer
+    margin-top: 20px
+.review__foot-link
+  display: flex
+  align-items: center
+  padding-right: 40px
+  margin-top: 20px
+  color: $green
+  font-weight: 500
+  text-decoration: none
+  svg
+    flex-shrink: 0
+    margin-right: 10px
+    fill: currentcolor
+  &:hover
+    text-decoration: underline
+  &:last-of-type
+    margin-right: auto
+.similar
+  padding-bottom: 90px
+  h2
+    margin-bottom: 25px
+  .grid__item
+    width: calc(100% / 5 - 12px)
+    +max(1400)
+      width: calc(100% / 4 - 12px)
+    +max(1200)
+      width: calc(100% / 3 - 12px)
+    +max(991)
+      width: calc(100% / 2 - 12px)
+    +max(768)
+      width: calc(100% / 1 - 12px)
+
+.grid
+  display: flex
+  flex-wrap: wrap
+
+.grid__item
+  // width: calc(100% / 5 - 12px)
+  // max-width: 312px
+  // flex-basis: 270px
+  // flex-grow: 1
+  display: flex
+  flex-direction: column
+  margin: 6px
+  padding: 20px
+  line-height: 1.2
+  background: #FFFFFF
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 24px
+
+.grid__item-media
+  +img(100)
+  background: #000
+  // img
+    opacity: .4
+
+.grid__item-title
+  flex-grow: 1
+  margin: 12px 0
+.grid__item-action 
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .prod__price
+    margin-right: 10px
+    font-size: 20px
+    white-space: nowrap
+    span
+      font-size: 0.7em
+  .btn
+    max-width: 120px
+    font-size: 14px
+
+
+.row--reorder
+  +max(1200)
+    flex-direction: column-reverse
+    .prod__short-info
+      margin-bottom: 70px
+
+
+.prod__gallery
+  padding-right: 15px
+  font-size: 0
+  +max(1200)
+    padding-right: 0
+.prod__gallery-item
+  &:not(:first-child)
+    margin-top: 10px
+  +img(67)
+  // +zoom
+  video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+
+.more-rev
+  margin-top: 30px
+  text-align: center
+
+
+.reviews__header
+  display: flex
+  align-items: center
+  margin-bottom: 20px
+  .btn
+    height: 50px
+    max-width: 220px
+    flex-shrink: 0
+    margin-left: 20px
+    font-size: 16px
+  .nice-select
+    max-width: 280px
+    margin-left: 45px
+  +max(991)
+    display: block
+    .nice-select
+      max-width: 100%
+      margin: 0
+      margin-top: 25px
+.reviews__write
+  display: flex
+  align-items: center
+  padding: 20px 40px
+  background: #FFFFFF
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 24px
+  h4
+    text-transform: initial
+    line-height: 1.3
+  +max(1500)
+    display: block
+    padding: 20px 15px
+    .btn
+      max-width: 100%
+      margin: 0
+      margin-top: 20px
+  
+
+.sc--contact
+  margin-top: 70px
+
+.contact-block--page
+  padding-top: 15px
+  background-position: calc(50% + 738px) 24%
+  .contact-block__row
+    padding-top: 0
+
+
+
+.departments
+  padding-top: 0
+  font-weight: 500
+  font-size: 24px
+  line-height: 1.3
+  h4
+    margin-bottom: 30px
+    text-transform: initial
+    line-height: 1.3
+
+.departments__box
+  margin-top: 50px
+
+.departments__phones
+  display: flex
+  svg
+    +size(24)
+    flex-shrink: 0
+    margin-top: 8px
+    margin-right: 20px
+    fill: $green
+  a
+    display: block
+    color: inherit
+    text-decoration: none
+    +trs(color)
+    &:not(:first-child)
+      margin-top: 20px
+    &:hover
+      color: $green
+      span
+        color: $def
+    span
+      display: block
+      font-size: 14px
+
+
+.tech-category
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  font-size: 0
+  b
+    display: block
+    margin-top: 5px
+    text-align: center
+    font-size: 20px
+    line-height: 1.3
+  +max(576)
+    b
+      font-size: 16px
+  +max(380)
+    b
+      font-size: 13px
+.tech-category__item
+  // width: calc(100% / 7 - 10px)
+  flex-basis: 170px
+  flex-grow: 1
+  display: block
+  margin: 5px
+  margin-top: 30px
+  padding: 30px 10px
+  color: $def
+  text-decoration: none
+  // background: silver
+  border-radius: 24px
+  +trs()
+  +max(1200)
+    // width: calc(100% / 4 - 10px)
+  +max(576)
+    width: calc(100% / 2 - 10px)
+    flex-basis: initial
+  &:hover
+    background: $green
+    color: #fff
+    .tech-category__item-ico
+      // background: $green
+      svg
+        path
+          stroke: #fff
+
+    
+.tech-category__item-ico
+  height: 110px
+  display: flex
+  justify-content: center
+  align-items: center
+  // padding: 10px
+  // border-radius: 12px
+  +trs(background)
+  svg
+    path
+      +trs(stroke)
+    
+
+.category-control
+  display: flex
+  align-items: center
+  margin-top: 70px
+  font-size: 16px
+  color: $grey
+  +max(768)
+    flex-wrap: wrap
+    .filter-toggle
+      order: 1
+    .category-control__count
+      order: 3
+    .nice-select
+      height: 40px
+      width: calc(100% - 135px)
+      order: 2
+  +max(575)
+    .category-control__count
+      order: 2
+    .nice-select
+      width: 100%
+      max-width: 100%
+      order: 3
+      margin-top: 20px
+.filter-toggle
+  display: none
+  width: initial
+  max-width: initial
+  justify-content: flex-start
+  margin-right: 20px
+  padding-left: 10px
+  padding-right: 10px
+  svg
+    fill: $grey
+  +max(991)
+    display: flex
+.category-control__count
+  margin-right: auto
+  padding-right: 10px
+  b,strong
+    font-weight: 500
+
+.catalog
+  margin-top: 30px
+  padding-bottom: 140px
+  +max(575)
+    margin-top: 15px
+
+.catalog__grid
+  display: flex
+  // flex-wrap: wrap
+  .grid__item
+    width: calc(100% / 4 - 12px)
+  +max(1500)
+    .grid__item
+      width: calc(100% / 3 - 12px)
+  +max(1200)
+    .grid__item
+      width: calc(100% / 2 - 12px)
+  +max(991)
+    display: block
+  +max(768)
+    .grid__item
+      width: calc(100% / 1 - 12px)
+.filter
+  position: relative
+  // width: 300px
+  flex-basis: 303px
+  font-size: 16px
+  flex-shrink: 0
+  margin-right: 20px
+  margin-top: 6px
+  +max(991)
+    margin-right: 0
+
+.filter__wrap
+  +max(991)
+    position: absolute
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    z-index: 20
+    width: calc(100vw - 42px)
+    padding: 20px 15px
+    // padding-bottom: 30px
+    background: #fff
+    box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+    transform: translateX(-100%)
+    +trs(transform)
+    // border-radius: 24px
+    &.active
+      transform: translateX(0)
+
+.filter__wrap-mob
+  display: flex
+  display: none
+  align-items: center
+  justify-content: space-between
+  // background: silver
+  padding-bottom: 15px
+  .btn
+    max-width: 160px
+    font-size: 13px
+  +max(991)
+    display: flex
+.filter__wrap-mob-toggle
+  display: flex
+  align-items: center
+  padding-right: 15px
+  cursor: pointer
+  font-weight: 800
+  font-size: 16px
+  line-height: 1.2
+  text-transform: uppercase
+  svg
+    +size(22)
+    fill: none
+    stroke: $def
+    flex-shrink: 0
+    margin-right: 10px
+
+
+
+.filter__content
+  padding: 20px 25px
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 24px
+  +max(991)
+    height: calc(100% - 107px)
+    padding: 0
+    padding-right: 4px
+    box-shadow: none
+    border-radius: 0
+    overflow-y: auto
+  // +max(460)
+    padding-left: 10px
+    padding-right: 10px
+.filter__item
+  padding-bottom: 20px
+  &:not(:last-child)
+    margin-bottom: 15px
+    border-bottom: 1px solid #E1E6E3
+
+.filter__title
+  display: flex
+  // align-items: center
+  justify-content: space-between
+  margin-bottom: 10px
+  font-size: 18px
+  +lh(27,18)
+  cursor: pointer
+  font-weight: bold
+  user-select: none
+  svg
+    +size(8)
+    flex-shrink: 0
+    margin-left: 10px
+    margin-top: 13px
+    transform: rotate(180deg)
+    +trs(transform)
+  &.active
+    svg
+      transform: rotate(0)
+
+.filter__search
+  input
+
+.filter__action
+  padding-top: 12px
+  text-align: center
+.filter__action-enter
+  display: none
+  +max(991)
+    display: block
+    max-width: 100%
+
+.filter__action-clear
+  +max(991)
+    display: none
+
+body
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 15
+    background: rgba(0, 0, 0, 0.4)
+    +trs(opacity)
+    visibility: hidden
+    opacity: 0
+  &.filter-active
+    &::before
+      visibility: visible
+      opacity: 1
+
+
+.anm-title
+  position: relative
+  display: flex
+  align-items: baseline
+  padding-top: 8px
+  // background: silver
+  overflow: hidden
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    width: 140px
+    z-index: 8
+    // background: #000
+    background: linear-gradient(270deg, #FFFFFF 30%, rgba(255, 255, 255, 0) 100%)
+
+  h2
+    padding-right: 15px
+  +max(991)
+    display: block
+    h2
+      padding-right: 0
+.anm-title__box
+  position: relative
+  flex-grow: 1
+  display: flex
+  +max(410)
+    display: none
+.anm-title__box-dynamic
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  z-index: 8
+  background: #fff
+  +trs
+  svg
+    position: absolute
+    bottom: -1px
+    right: 0
+    transform: translateX(50%)
+.anm-title__box-static
+  position: relative
+  z-index: 2
+  width: 100%
+  background-repeat: repeat-x
+
+
+.services
+  .anm-title__box-static
+    height: 27px
+  .anm-title__box-dynamic
+    width: 10%
+    border-bottom: 1px solid $green
+  &.anm-start
+    .anm-title__box-dynamic
+      +move($duration: 6, $distanceStart: 10, $distanceEnd: 115)
+      // =move($duration: 3, $distanceStart: 10,  $distanceEnd: 90, $timeFunc: linear)
+  +max(1024)
+    .anm-title__box-dynamic
+      width: 22%
+      svg
+        transform: translateX(calc(50% - 10px))
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 22, $distanceEnd: 115)
+  +max(991)
+    .anm-title__box
+      margin-top: 40px
+    .anm-title__box-dynamic
+      width: 11%
+      svg
+        transform: translateX(calc(50% - 10px))
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 11, $distanceEnd: 115)
+
+  +max(576)
+    // .anm-title__box
+      margin-top: 40px
+    .anm-title__box-dynamic
+      width: 16%
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 16, $distanceEnd: 115)
+
+
+
+.about-block
+  .anm-title__box-static
+    height: 36px
+  .anm-title__box-dynamic
+    bottom: -2px
+    left: -2px
+    width: 5%
+    border-bottom: 1px solid $green
+    svg
+      transform: translateX(calc(50% - 10px))
+  &.anm-start
+    .anm-title__box-dynamic
+      +move($duration: 6, $distanceStart: 5, $distanceEnd: 115)
+      // =move($duration: 3, $distanceStart: 10,  $distanceEnd: 90, $timeFunc: linear)
+  +max(1024)
+    .anm-title__box-dynamic
+      width: 10%
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 10, $distanceEnd: 115)
+  +max(991)
+    .anm-title__box
+      margin-bottom: 30px
+  +max(576)
+    .anm-title__box-dynamic
+      width: 18%
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 18, $distanceEnd: 115)
+
+.partners
+  .anm-title__box-static
+    height: 30px
+  .anm-title__box-dynamic
+    width: 17%
+    background: #fff
+    border-bottom: 1px solid $green
+    svg
+      // transform: translateX(calc(50% + 0px))
+      fill: #fff
+      transform: translateX(28px)
+  &.anm-start
+    .anm-title__box-dynamic
+      +move($duration: 6, $distanceStart: 17, $distanceEnd: 115)
+      // =move($duration: 3, $distanceStart: 10,  $distanceEnd: 90, $timeFunc: linear)
+  +max(1024)
+    .anm-title__box-dynamic
+      width: 22%
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 22, $distanceEnd: 115)
+  +max(768)
+    .anm-title__box-dynamic
+      width: 30%
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 30, $distanceEnd: 125)
+
+  // +max(576)
+    .anm-title__box-dynamic
+      width: 23%
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 23, $distanceEnd: 115)
+
+
+
+.contact-block
+  .anm-title__box-static
+    height: 36px
+    background-position: 0 100%
+  .anm-title__box-dynamic
+    width: 8%
+    border-bottom: 1px solid $green
+    svg
+      bottom: -2px
+      transform: translateX(calc(50% - -25px))
+  &.anm-start
+    .anm-title__box-dynamic
+      +move($duration: 6, $distanceStart: 8, $distanceEnd: 115)
+
+  +max(1024)
+    .anm-title__box-dynamic
+      width: 8%
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 8, $distanceEnd: 115)
+
+  +max(991)
+    .anm-title__box
+      margin-top: 40px
+  +max(576)
+    &.anm-start
+      .anm-title__box-dynamic
+        +move($duration: 6, $distanceStart: 8, $distanceEnd: 115)
+
+
+
+.pages-nav
+  font-size: 16px
+  +max(1199)
+    margin-bottom: 30px
+  ul
+    margin: 0
+    padding: 0
+    li
+      margin: 0
+      padding: 0
+      &::before
+        display: none
+      &:not(:last-child)
+        margin-bottom: 2px
+      &:hover,&.active
+        a
+          color: #fff
+          background: #009846
+          &>svg
+            opacity: 1
+            fill: currentColor
+        .pages-nav__ico
+          svg
+            fill: currentColor
+            path
+              fill: currentColor
+  a
+    min-height: 80px
+    display: flex
+    align-items: center
+    padding: 10px
+    padding-left: 28px
+    padding-right: 20px
+    color: #001E0E
+    font-weight: 800
+    text-transform: uppercase
+    text-decoration: none
+    background: #F7F8F7
+    +trs()
+    +max(1199)
+      min-height: 60px
+    +max(576)
+      padding: 5px 10px
+      font-size: 13px
+    &>
+      svg
+        +size(16)
+        flex-shrink: 0
+        margin-left: auto
+        opacity: 0
+        fill: #fff
+        +trs(opacity)
+.pages-nav__ico
+  margin-right: 24px
+  flex-shrink: 0
+  font-size: 0
+  +max(576)
+    margin-right: 10px
+  svg
+    +size(24)
+    +trs(fill)
+    path
+      +trs(fill)
+  
+
+
+.articles
+  margin-top: 28px
+  font-size: 16px
+.articles__item
+  display: flex
+  // align-items: flex-start
+  padding-bottom: 20px
+  border-bottom: 1px solid #E6E9E7
+  &:not(:last-child)
+    margin-bottom: 20px
+  +max(991)
+    display: block
+.articles__item-media
+  max-width: 382px
+  width: 100%
+  +img(75.2)
+  flex-shrink: 0
+  margin-right: 20px
+  video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+  +max(991)
+    margin-bottom: 20px
+.articles__status
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 8
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  padding-top: 5px
+  font-weight: bold
+  font-size: 16px
+  text-transform: uppercase
+  color: #FFFF
+.articles__status-item
+  width: max-content
+  margin: 5px
+  margin-left: 0
+  margin-right: 0
+  padding: 7px 15px
+  background: $green
+
+.articles__item-content
+  display: flex
+  flex-direction: column
+  p
+    margin: 15px 0
+
+.articles__item-title
+  display: block
+  text-decoration: none
+  font-weight: bold
+  font-size: 20px
+  +lh(30,20)
+  text-transform: uppercase
+  color: #001E0E
+  +trs(color)
+a.articles__item-title
+  &:hover
+    color: $green
+
+.articles__item-date
+  margin-top: auto
+  padding-top: 15px
+  font-weight: 500
+  font-size: 14px
+  line-height: 1
+  color: #BAC2BD
+
+
+.pages-nav-container
+  .history__content
+    padding-left: 0
+  .history__content-desc
+    padding: 35px 30px
+  .history__content-img::before
+    padding-top: 68.5%
+
+.docs
+  margin-top: 60px
+  h3
+    margin-bottom: 30px
+
+.docs__list-item
+  display: flex
+  align-items: center
+  padding: 10px 0
+  border-bottom: 1px solid #E6E9E7
+  +max(991)
+    display: block
+    text-align: center
+  &:first-child
+    border-top: 1px solid #E6E9E7
+  .btn
+    height: 50px
+    width: 184px
+    flex-shrink: 0
+    font-size: 18px
+.docs__list-item-title
+  display: flex
+  align-items: center
+  flex-grow: 1
+  padding-right: 25px
+  font-weight: bold
+  font-size: 20px
+  line-height: 1.2
+  color: #001E0E
+  svg
+    +size(32)
+    flex-shrink: 0
+    margin-right: 20px
+  +max(991)
+    margin-bottom: 20px
+    text-align: left
+  +max(576)
+    font-size: 18px
+
+.articles__item-media-count
+  display: flex
+  // margin-top: 15px
+  font-weight: 500
+  font-size: 14px
+  color: #BAC2BD
+  .photo,.video
+    display: flex
+    align-items: center
+    margin-right: 20px
+    svg
+      +size(24)
+      flex-shrink: 0
+      margin-right: 6px
+
+.gallery-head
+  display: flex
+  align-items: center
+  margin-top: 30px
+  padding-bottom: 20px
+  border-bottom: 1px solid #E6E9E7
+
+  .articles__item-date
+    margin-top: 0
+    margin-right: 40px
+    padding-top: 0
+  +max(576)
+    display: block
+    .articles__item-date
+      margin-right: 0
+      margin-bottom: 15px
+
+.gallery-list
+  display: flex
+  flex-wrap: wrap
+  // margin-top: 20px
+  margin-left: -15px
+  margin-right: -15px
+  padding-top: 15px
+
+.gallery-list__item
+  width: calc(100% / 3 - 30px)
+  margin: 15px
+  +img(75)
+  +max(767)
+    width: calc(100% / 2 - 30px)
+  +max(576)
+    width: calc(100% / 1 - 30px)
+  video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.articles__item-position 
+  font-size: 16px
+  line-height: 1.4
+  color: #001E0E
+
+
+
+.articles--rev
+  .articles__item-title
+    position: relative
+    padding-right: 60px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 50px
+      height: 40px
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: 50px 40px
+      background-image: url("data:image/svg+xml,%3Csvg width='50' height='40' viewBox='0 0 50 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.729 0L12.712 40H0L6.78 0h16.949zM50 0L38.983 40H26.271l6.78-40H50z' fill='%23EAEEEC'/%3E%3C/svg%3E")
+
+
+.vacancy-block
+  padding-top: 28px
+
+.vacancy-block__filter
+  display: flex
+  .nice-select
+    margin-right: 15px
+    margin: 15px
+    margin-top: 0
+    margin-left: 0
+  +max(576)
+    display: block
+    .nice-select
+      width: 100%
+      max-width: 100%
+.vacancy-block__list
+  padding-top: 15px
+.vacancy-block__item
+  margin-bottom: 20px
+  padding-bottom: 20px
+  border-bottom: 1px solid #E6E9E7
+
+
+
+.vacancy-block__item-title
+  font-weight: bold
+  font-size: 20px
+  +lh(30,20)
+  text-transform: uppercase
+  color: #001E0E
+  text-decoration: none
+  +trs(color)
+  &:hover
+    color: $green
+
+.vacancy-block__item-info
+  display: flex
+  align-items: baseline
+  font-size: 14px
+  line-height: 1.4
+.city
+  margin-right: 15px
+  color: #001E0E
+.date
+  color: #BAC2BD
+  font-weight: 500
+
+
+
+
+.header__bot-box, .nav ul .submenu > a
+  display: flex
+  align-items: center
+  justify-content: center
+
+.services__item-link
+  color: #000
+  text-decoration: none
+  opacity: 1
+  transition: all 0.5s
+
+  &:hover, &:active
+    opacity: 0.7
+
+.services__item-title
+  span, a
+    display: inline-block
+    padding: 5px 30px 8px
+    border-radius: 16px
+    background: #fff
+
+.services__item-list-item a
+  color: #fff
+  text-decoration: none
+  opacity: 1
+  transition: all 0.5s
+
+  &:hover, &:active
+    opacity: 0.7
+
+.map-dot
+  position: relative
+  cursor: pointer
+
+.map__popup-desc
+  margin-top: 15px
+  margin-bottom: 0
+
+  p
+    margin-top: 15px
+    margin-bottom: 0
+
+.map__popup-phones
+  br
+    display: none
+
+  p
+    margin: 0
+
+.accordion__content .map__popup-phones
+  display: flex
+  margin: 0
+  font-size: 20px
+  margin-bottom: 20px
+
+  &:last-child
+    margin-bottom: 0
+
+.history__years
+  .swiper-slide .history__years-number
+    display: block
+    font-size: 16px
+    font-weight: bold
+
+  .swiper-slide-prev .history__years-number, .swiper-slide-next .history__years-number
+    transform: scale(1.15)
+
+  .swiper-slide-active .history__years-number
+    transform: scale(1.3)
+
+.departments__phones-list > p
+  margin: 0
+
+.tech-category__item
+  &.active, &:hover
+    background: #009846
+    color: #fff
+
+  &.active .tech-category__item-ico svg path, &:hover .tech-category__item-ico svg path
+    stroke: #fff
+
+.catalog__grid-content
+  width: 100%
+
+@media only screen and (min-width: 1200px)
+  .nav
+    > ul > li:first-child
+      min-width: 210px
+      justify-content: center
+
+    li:hover > ul
+      min-width: 100%
+      opacity: 1
+      visibility: visible
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page style end */
+
+/*media style*/
+@import "media"

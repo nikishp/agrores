@@ -1,0 +1,124 @@
+extends ../layout/main
+
+block head
+  - var title = 'Комбайн CR 9.80 New Holland - ГАЛЕРЕЯ'
+  - var bodyClass = ''
+block content
+  +bred
+
+  .container
+    .row
+      .col-12
+        h1 !{title}
+  .prod
+    .prod__header
+      .prod__header-top
+        .container
+          .row
+            .col-sm-6
+              +rating('15 відгуків')
+            .col-sm-6
+              .prod-id
+                span Код:
+                | 243335311
+      .prod__header-nav
+        .container
+          .row
+            .col-12
+              .prod__header-nav-box
+                ul
+                  li
+                    a(href="#") Все про товар
+                  li
+                    a(href="#") Характеристики
+                  li
+                    a(href="#") Опис
+                  li
+                    a(href="#") Відгуки
+                      span 15
+                  li.active
+                    a(href="#") Галерея
+    .prod__main
+      .container
+        .row.row--reorder
+          .col-xl-7
+            .char
+              h2.mb-35  Галерея
+              .prod__gallery
+                a.prod__gallery-item(href="https://picsum.photos/1200", data-fancybox="galstatick")
+                  img(src="https://picsum.photos/1200", alt="img")
+                a.prod__gallery-item(href="https://picsum.photos/1201", data-fancybox="galstatick")
+                  img(src="https://picsum.photos/1201", alt="img")
+                a.prod__gallery-item(href="https://picsum.photos/1202", data-fancybox="galstatick")
+                  img(src="https://picsum.photos/1202", alt="img")
+                a.prod__gallery-item(href="https://picsum.photos/1203", data-fancybox="galstatick")
+                  img(src="https://picsum.photos/1203", alt="img")
+                a.prod__gallery-item(href="https://picsum.photos/1204", data-fancybox="galstatick")
+                  img(src="https://picsum.photos/1204", alt="img")
+                a.prod__gallery-item(href="https://picsum.photos/1205", data-fancybox="galstatick")
+                  img(src="https://picsum.photos/1205", alt="img")
+                a.prod__gallery-item(href="https://picsum.photos/1206", data-fancybox="galstatick")
+                  img(src="https://picsum.photos/1206", alt="img")
+                .prod__gallery-item
+                  video(controls='' controlsList="nodownload")
+                    source(src='video/video.mp4' type='video/mp4')
+
+          .col-xl-5
+            +short-info(true)
+
+  +similar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-

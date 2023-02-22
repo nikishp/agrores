@@ -1,0 +1,86 @@
+extends ../layout/main
+
+block head
+  - var title = 'Про компанію'
+  - var bodyClass = ''
+block content
+  +bred
+  .container
+    .row
+      .col-12
+        h1 !{title}
+
+
+  section.section.pages-nav-container
+    .container
+      .row
+        .col-xl-3
+          +pages-nav
+
+
+        .col-xl-9
+          h2 Спецпропозиції та акції
+          +articles('adf')
+          +pagination
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

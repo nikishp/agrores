@@ -1,0 +1,311 @@
+extends ../layout/main
+
+block head
+  - var title = 'Контакти'
+  - var bodyClass = ''
+block content
+  +bred
+
+  .container
+    .row
+      .col-12
+        h1 !{title}
+
+  section.section.contact-block.contact-block--page
+    .container
+      .row.contact-block__row
+        .col-xl-4 
+          .contact-block__desc
+            .contact-block__desc-item.contact-block__desc-item--accent
+              a(href="tel:+38 (050) 487 55 62")
+                +svg('phone')
+                | +38 (050) 487 55 62
+              a(href="#")
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.002 0h-.005C4.485 0 0 4.485 0 10c0 2.188.705 4.215 1.904 5.861L.658 19.576 4.5 18.347A9.913 9.913 0 0010.002 20C15.517 20 20 15.514 20 10S15.516 0 10.002 0z"/><path d="M15.82 14.121c-.24.681-1.198 1.246-1.962 1.412-.522.11-1.205.2-3.502-.753-2.939-1.217-4.832-4.204-4.979-4.397-.141-.194-1.188-1.582-1.188-3.017 0-1.435.73-2.133 1.023-2.433.241-.247.64-.36 1.022-.36.124 0 .235.007.335.012.294.013.442.03.635.494.242.581.83 2.016.9 2.164.07.147.142.347.042.54-.094.2-.177.29-.324.46-.148.17-.288.3-.435.482-.135.159-.288.329-.118.623.17.287.758 1.246 1.623 2.016 1.116.993 2.021 1.311 2.345 1.446.241.1.529.076.705-.111.224-.242.5-.642.781-1.035.2-.283.453-.318.718-.218.27.094 1.698.8 1.992.947.294.147.488.217.559.34.07.124.07.706-.171 1.388z" fill="#FAFAFA"/></svg>
+              a(href="#")
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M15.96 6.992l-.004-.016c-.307-1.24-1.69-2.57-2.96-2.847l-.014-.003a16.448 16.448 0 00-6.19 0l-.015.003c-1.27.277-2.653 1.607-2.96 2.847l-.003.016a12.116 12.116 0 000 5.22l.003.014c.294 1.188 1.574 2.457 2.797 2.806v1.384c0 .502.61.748.958.386l1.402-1.458a16.361 16.361 0 004.008-.267l.014-.003c1.27-.277 2.653-1.607 2.96-2.848l.004-.015a12.12 12.12 0 000-5.22zm-1.11 4.968c-.205.81-1.255 1.815-2.09 2a15.327 15.327 0 01-3.292.267.078.078 0 00-.058.024L8.386 15.3l-1.09 1.119a.128.128 0 01-.219-.088v-2.294a.079.079 0 00-.064-.077c-.835-.186-1.885-1.192-2.09-2a10.996 10.996 0 010-4.718c.205-.81 1.255-1.815 2.09-2.001a15.317 15.317 0 015.748 0c.835.186 1.884 1.192 2.089 2a10.983 10.983 0 010 4.718zm-3.148 1.059c-.129-.04-.25-.065-.364-.112-1.177-.489-2.26-1.118-3.117-2.083-.487-.549-.87-1.169-1.192-1.824-.153-.311-.282-.634-.413-.955-.12-.293.057-.596.242-.816.175-.207.4-.366.642-.483.19-.09.377-.038.516.123.3.347.574.713.797 1.116.137.248.1.55-.149.72-.06.04-.115.088-.171.135a.562.562 0 00-.13.136.374.374 0 00-.025.329c.306.84.822 1.495 1.67 1.848.135.056.27.121.427.103.261-.03.346-.317.53-.467a.499.499 0 01.6-.026c.193.122.38.253.566.386.183.13.364.257.533.405.161.143.217.33.126.523-.167.354-.41.65-.76.837-.099.053-.217.07-.328.105-.129-.04.111-.035 0 0zM9.89 6.34c1.538.043 2.802 1.064 3.073 2.586.046.259.063.524.083.787.009.11-.054.216-.173.217-.123.002-.179-.102-.187-.212-.016-.22-.027-.439-.057-.656a2.749 2.749 0 00-2.214-2.298c-.172-.03-.347-.039-.521-.057-.11-.011-.254-.018-.279-.155-.02-.114.077-.206.186-.211.03-.002.06 0 .089 0 1.539.042-.03 0 0 0zm2.338 3.032c-.002.019-.004.064-.015.106-.04.155-.275.174-.329.018a.464.464 0 01-.018-.148c0-.326-.072-.652-.236-.935a1.74 1.74 0 00-.73-.685 2.098 2.098 0 00-.581-.178c-.088-.015-.177-.024-.265-.036-.107-.015-.164-.083-.159-.188.005-.099.077-.17.185-.163.353.02.694.096 1.008.262.638.338 1.003.872 1.11 1.584.004.033.012.065.014.097.006.08.01.16.016.266-.002.019-.006-.106 0 0zm-.957-.038c-.129.003-.197-.069-.21-.187-.01-.082-.017-.165-.037-.245a.692.692 0 00-.255-.4.668.668 0 00-.208-.101c-.094-.028-.193-.02-.287-.043-.102-.025-.158-.108-.142-.204a.185.185 0 01.195-.148c.596.043 1.023.351 1.083 1.053.005.05.01.102-.001.15-.02.08-.08.121-.138.125-.129.003.059-.004 0 0zm.43 3.684c.112-.035-.128-.04 0 0zM9.895 6.342h0zm-.004 0h.004c.085.003 1.474.04-.004 0z" fill="#fff"/></svg>
+              a(href="#")
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="#fff"/><path d="M9.437 8.211l-3.24 3.431 2.948-1.618 1.541 1.618 3.222-3.43L10.992 9.8l-1.555-1.59z"/><path d="M10 0C4.478 0 0 4.478 0 10s4.478 10 10 10 10-4.478 10-10S15.522 0 10 0zm.078 15.353a6.422 6.422 0 01-1.779-.25L6.283 16.25v-2.157C4.933 13.066 4.07 11.5 4.07 9.747c0-3.096 2.69-5.606 6.008-5.606 3.319 0 6.009 2.51 6.009 5.606s-2.69 5.606-6.009 5.606z"/></svg>
+            
+            a.contact-block__desc-item(href="mailto:v.kolechkina@agroresurs-a.com")
+              +svg('email')
+              | v.kolechkina@agroresurs-a.com
+            .contact-block__desc-item
+              +svg('pointer')
+              div
+                small Центральний офіс
+                | Україна, Кіровоградська область, Кропивницький, вул. Мурманська, 29-М
+          +sc('sc--contact')
+        .col-xl-8
+          +map_svg() 
+
+          .accordion.map-mobile
+            .accordion__item
+              .accordion__title
+                +svg('pointer')
+                | Чернігівська обл., м. Ніжин, вул. Носівський Шлях, 1
+                .accordion__arrow
+                  span
+                    +svg('down')
+              .accordion__content 
+                .map__popup-phones
+                  +svg('phone')
+                  div
+                    a(href='tel:+380463154213') (04631) 542 13
+                    a(href='tel:+380675210515') (067) 521 05 15
+                    a(href='tel:+380504874160') (050) 487 41 60
+                a.contact-block__desc-item(href="mailto:v.kolechkina@agroresurs-a.com")
+                  +svg('email')
+                  | v.kolechkina@agroresurs-a.com
+
+
+            .accordion__item
+              .accordion__title
+                +svg('pointer')
+                | Чернігівська обл., м. Ніжин, вул. Носівський Шлях, 1
+                .accordion__arrow
+                  span
+                    +svg('down')
+              .accordion__content 
+                .map__popup-phones
+                  +svg('phone')
+                  div
+                    a(href='tel:+380463154213') (04631) 542 13
+                    a(href='tel:+380675210515') (067) 521 05 15
+                    a(href='tel:+380504874160') (050) 487 41 60
+                a.contact-block__desc-item(href="mailto:v.kolechkina@agroresurs-a.com")
+                  +svg('email')
+                  | v.kolechkina@agroresurs-a.com
+
+
+            .accordion__item
+              .accordion__title
+                +svg('pointer')
+                | Чернігівська обл., м. Ніжин, вул. Носівський Шлях, 1
+                .accordion__arrow
+                  span
+                    +svg('down')
+              .accordion__content 
+                .map__popup-phones
+                  +svg('phone')
+                  div
+                    a(href='tel:+380463154213') (04631) 542 13
+                    a(href='tel:+380675210515') (067) 521 05 15
+                    a(href='tel:+380504874160') (050) 487 41 60
+                a.contact-block__desc-item(href="mailto:v.kolechkina@agroresurs-a.com")
+                  +svg('email')
+                  | v.kolechkina@agroresurs-a.com
+
+
+            .accordion__item
+              .accordion__title
+                +svg('pointer')
+                | Чернігівська обл., м. Ніжин, вул. Носівський Шлях, 1
+                .accordion__arrow
+                  span
+                    +svg('down')
+              .accordion__content 
+                .map__popup-phones
+                  +svg('phone')
+                  div
+                    a(href='tel:+380463154213') (04631) 542 13
+                    a(href='tel:+380675210515') (067) 521 05 15
+                    a(href='tel:+380504874160') (050) 487 41 60
+                a.contact-block__desc-item(href="mailto:v.kolechkina@agroresurs-a.com")
+                  +svg('email')
+                  | v.kolechkina@agroresurs-a.com
+
+
+            .accordion__item
+              .accordion__title
+                +svg('pointer')
+                | Чернігівська обл., м. Ніжин, вул. Носівський Шлях, 1
+                .accordion__arrow
+                  span
+                    +svg('down')
+              .accordion__content 
+                .map__popup-phones
+                  +svg('phone')
+                  div
+                    a(href='tel:+380463154213') (04631) 542 13
+                    a(href='tel:+380675210515') (067) 521 05 15
+                    a(href='tel:+380504874160') (050) 487 41 60
+                a.contact-block__desc-item(href="mailto:v.kolechkina@agroresurs-a.com")
+                  +svg('email')
+                  | v.kolechkina@agroresurs-a.com
+
+
+            .accordion__item
+              .accordion__title
+                +svg('pointer')
+                | Чернігівська обл., м. Ніжин, вул. Носівський Шлях, 1
+                .accordion__arrow
+                  span
+                    +svg('down')
+              .accordion__content 
+                .map__popup-phones
+                  +svg('phone')
+                  div
+                    a(href='tel:+380463154213') (04631) 542 13
+                    a(href='tel:+380675210515') (067) 521 05 15
+                    a(href='tel:+380504874160') (050) 487 41 60
+                a.contact-block__desc-item(href="mailto:v.kolechkina@agroresurs-a.com")
+                  +svg('email')
+                  | v.kolechkina@agroresurs-a.com
+
+  section.section.departments
+    .container
+      .row
+        .col-12
+          h2 Наші відділи
+      .row.row--departments
+        .col-sm-6.col-lg-4.col-xl-3
+          .departments__box
+            h4 Відділ імпортної самохідної техніки
+            .departments__phones
+              +svg('phone')
+              .departments__phones-list
+                a(href="tel:0675212411") 067 521 24 11
+                  span Faresin, Oros
+                a(href="tel:0675212411") 050 487 88 91
+                  span Lemken, PLM
+                a(href="tel:0675212411") 050 420 59 94
+                  span New Holland
+        .col-sm-6.col-lg-4.col-xl-3
+          .departments__box
+            h4 Відділ імпортної причіпної техніки
+            .departments__phones
+              +svg('phone')
+              .departments__phones-list
+                a(href="tel:0675212411") 050 420 59 89
+                  span KUHN
+                a(href="tel:0675212411") 050 487 12 44
+                  span Maschio Gaspardo
+                a(href="tel:0675212411") 050 487 11 98
+                  span Bednar
+        .col-sm-6.col-lg-4.col-xl-3
+          .departments__box
+            h4 Відділ обприскувачів TECNOMA
+            .departments__phones
+              +svg('phone')
+              .departments__phones-list
+                a(href="tel:0675212411") 050 487 88 96
+        .col-sm-6.col-lg-4.col-xl-3
+          .departments__box
+            h4 Відділ вітчизняної техніки
+            .departments__phones
+              +svg('phone')
+              .departments__phones-list
+                a(href="tel:0675212411") 050 487 56 00
+        .col-sm-6.col-lg-4.col-xl-3
+          .departments__box
+            h4 Вантажівки MAN
+            .departments__phones
+              +svg('phone')
+              .departments__phones-list
+                a(href="tel:0675212411") 050 487 56 00
+        .col-sm-6.col-lg-4.col-xl-3
+          .departments__box
+            h4 Відділ гарантийно-сервісного обслуговування
+            .departments__phones
+              +svg('phone')
+              .departments__phones-list
+                a(href="tel:0675212411") 050 487 56 00
+                  span самохідна техніка
+                a(href="tel:0675212411") 050 487 30 50
+                  span причіпна техніка
+        .col-sm-6.col-lg-4.col-xl-3
+          .departments__box
+            h4 Відділ запасних частин
+            .departments__phones
+              +svg('phone')
+              .departments__phones-list
+                a(href="tel:0675212411") 050 487 56 00
+        .col-sm-6.col-lg-4.col-xl-3
+          .departments__box
+            h4 Фінансування кредитування і лізинг
+            .departments__phones
+              +svg('phone')
+              .departments__phones-list
+                a(href="tel:0675212411") 050 487 56 00
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

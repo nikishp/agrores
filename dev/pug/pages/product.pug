@@ -1,0 +1,289 @@
+extends ../layout/main
+
+block head
+  - var title = 'Комбайн CR 9.80 New Holland'
+  - var bodyClass = ''
+block content
+  +bred
+
+  .container
+    .row
+      .col-12
+        h1 !{title}
+  .prod
+    .prod__header
+      .prod__header-top
+        .container
+          .row
+            .col-sm-6
+              +rating('15 відгуків')
+            .col-sm-6
+              .prod-id 
+                span Код: 
+                | 243335311
+      .prod__header-nav
+        .container
+          .row
+            .col-12
+              .prod__header-nav-box
+                ul
+                  li.active
+                    a(href="#") Все про товар
+                  li
+                    a(href="#") Характеристики
+                  li
+                    a(href="#") Опис
+                  li
+                    a(href="#") Відгуки 
+                      span 15
+                  li
+                    a(href="#") Галерея
+
+    .prod__main
+      .container
+        .row
+          .col-xl-7
+            .prod__media
+              .prod__media-nav.swiper-container
+                .swiper-wrapper
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/900", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/901", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/902", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/903", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/904", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/905", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/906", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/907", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/908", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/909", alt="img")
+                  .swiper-slide
+                    .prod__media-item
+                      img(src="https://picsum.photos/910", alt="img")
+                // Add Scrollbar
+              .swiper-scrollbar
+              .prod__media-gallery.swiper-container
+                .swiper-wrapper
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/900", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/901", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/902", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/903", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/904", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/905", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/906", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/907", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/908", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/909", alt="img")
+                  .swiper-slide
+                    a.prod__media-item(href="https://picsum.photos/900", data-fancybox="prodgal")
+                      img(src="https://picsum.photos/910", alt="img")
+
+          .col-xl-5
+            +short-info()
+        .row.mt-90
+          .col-lg-6.col-xl-7
+            .char
+              h2.mb-35  Характеристики
+              .char__box
+                h4 зернові жатки
+                +char-item('Надпродуктивні жатки для зернових, м','7,3-9,15')
+                +char-item('Жатки для зернових типу Varifeed, м', '7,3-9,15')
+                +char-item('Хід ножа, мм', '500')
+                +char-item('Кількість зрізів, 1 / хв.', '1150')
+                h4 Двигун
+                +char-item('Двигун', 'Cursor 13 FPT')
+                +char-item('Номінальна потужність по ISO при 2000 об. / Хв., КВт / к.с.', '360/490')
+                +char-item('Максимальна потужність при 2000 об. / Хв., КВт / к.с.', '390/530')
+                +char-item('Тип управління', 'Електронний')
+                +char-item('Паливний бак, л', '1000')
+                h4 Похила камера
+                +char-item('Поперечна флотація Auto Float', '+')
+                +char-item('Контроль висоти', '+')
+                +char-item('Кількість ланцюгів', '4')
+                +char-item('Реверс', 'Гідравлічний')
+                h4 Бітер
+                +char-item('Ширина, мм', '1560')
+                +char-item('Діаметр, мм', '400')
+
+              +more('Всі характеристики')
+
+            .desc.mt-100
+              h2.mb-35 Опис
+              p За маркою New Holland, що заслужила визнання у всіх частинах світу, стоять досвід і знання, накопичені компаніями, що змінили вигляд світової сільськогосподарської індустрії. Компанія заснована в 1895 році, має 69 заводів і представництва більш ніж в 170 країнах світу!
+              p Комбайни New Holland займають 40% продажів на ринку України і є абсолютним лідером за підсумками 2014 года!
+              
+              h4 Новий комбайн CR 9.80 - вища якість зерна при максимальній продуктивності.
+              h4.mb-0 Нова ергономічна кабіна Harvest Suite Ultra
+              p.mt-0 Больше площадь остекления 6,3 м2 (2014-5,9 м2). Лучше шумоизоляция кабины 73 дБ(А) (2014-74дБ(А)). Больший внутренний объем 3,7м3 (3,1 м3). Лучше пакет рабочего и основного освещения. Панорамные большие двойные зеркала заднего вида. Переносной холодильник, размещенный под сидением инструктора.
+
+              +more('Читати повністю')
+          .col-lg-6.col-xl-5
+            .reviews
+              h2.mb-35 Відгуки
+              .prod__info-block.prod__info-block--review
+                .review__head
+                  b Мікеланджело Буонарроті
+                  .review__head-box
+                    +rating('8 вересня 2020')
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.67 17.47l-8.05-14a3 3 0 00-5.24 0l-8 14A3 3 0 003.94 22h16.12a3 3 0 002.61-4.53zm-1.73 2a1 1 0 01-.88.51H3.94a1 1 0 01-.88-.51 1 1 0 010-1l8-14a1 1 0 011.78 0l8.05 14a1 1 0 01.05 1.02v-.02z" fill="#BAC2BD"/><path d="M11.444 16.169a1 1 0 111.111 1.662 1 1 0 01-1.11-1.662zM11.293 8.293A1 1 0 0113 9v4a1 1 0 01-2 0V9a1 1 0 01.293-.707z" fill="#EF6023"/></svg>
+                .review__desc Ідейні міркування вищого порядку, а також постійний кількісний ріст і сфера нашої активності дозволяє виконувати важливі завдання по розробці системи навчання кадрів, відповідає нагальним потребам. Повсякденна практика показує, що подальший розвиток різних форм діяльності забезпечує широкому колу (фахівців) участь у формуванні.
+                .review__feeling
+                  b Переваги:
+                  p Постійний кількісний ріст
+                .review__feeling
+                  b Недоліки:
+                  p Сфера нашої активності
+
+                .review__foot
+                  a(href="#").review__foot-link
+                    +svg('down-right')
+                    | Ответить
+                  a(href="#").review__foot-link
+                    +svg('comment')
+                    | 5 ответов
+
+                  +vote('26', '5')
+              .prod__info-block.prod__info-block--review
+                .review__head
+                  b Мікеланджело Буонарроті
+                  .review__head-box
+                    +rating('8 вересня 2020')
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.67 17.47l-8.05-14a3 3 0 00-5.24 0l-8 14A3 3 0 003.94 22h16.12a3 3 0 002.61-4.53zm-1.73 2a1 1 0 01-.88.51H3.94a1 1 0 01-.88-.51 1 1 0 010-1l8-14a1 1 0 011.78 0l8.05 14a1 1 0 01.05 1.02v-.02z" fill="#BAC2BD"/><path d="M11.444 16.169a1 1 0 111.111 1.662 1 1 0 01-1.11-1.662zM11.293 8.293A1 1 0 0113 9v4a1 1 0 01-2 0V9a1 1 0 01.293-.707z" fill="#EF6023"/></svg>
+                .review__desc Ідейні міркування вищого порядку, а також постійний кількісний ріст 
+                .review__feeling
+                  b Переваги:
+                  p Початок повсякденної роботи по формуванню позиції являє собою цікавий експеримент
+                .review__feeling
+                  b Недоліки:
+                  p Сфера нашої активності
+
+                .review__foot
+                  a(href="#").review__foot-link
+                    +svg('down-right')
+                    | Ответить
+                  //- a(href="#").review__foot-link
+                    +svg('comment')
+                    | 5 ответов
+
+                  +vote('3', '0')
+              .prod__info-block.prod__info-block--review
+                .review__head
+                  b Донато ді Нікколо ді Бетто
+                  .review__head-box
+                    +rating('8 вересня 2020')
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.67 17.47l-8.05-14a3 3 0 00-5.24 0l-8 14A3 3 0 003.94 22h16.12a3 3 0 002.61-4.53zm-1.73 2a1 1 0 01-.88.51H3.94a1 1 0 01-.88-.51 1 1 0 010-1l8-14a1 1 0 011.78 0l8.05 14a1 1 0 01.05 1.02v-.02z" fill="#BAC2BD"/><path d="M11.444 16.169a1 1 0 111.111 1.662 1 1 0 01-1.11-1.662zM11.293 8.293A1 1 0 0113 9v4a1 1 0 01-2 0V9a1 1 0 01.293-.707z" fill="#EF6023"/></svg>
+                .review__desc Різноманітний і багатий досвід постійне інформаційно-пропагандистське забезпечення нашої діяльності
+                //- .review__feeling
+                  b Переваги:
+                  p Початок повсякденної роботи по формуванню позиції являє собою цікавий експеримент
+                //- .review__feeling
+                  b Недоліки:
+                  p Сфера нашої активності
+
+                .review__foot
+                  a(href="#").review__foot-link
+                    +svg('down-right')
+                    | Ответить
+                  //- a(href="#").review__foot-link
+                    +svg('comment')
+                    | 5 ответов
+
+                  +vote('25', '10')
+              +more('Залишити відгук')
+
+  +similar
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

@@ -1,0 +1,1049 @@
+body
+  position: relative
+  min-width: 300px
+  font-family: $defFont
+  font-size: $baseFontSize+px
+  font-weight: 400
+  color: $def
+  line-height: 1.6
+  //line-height: 1.2 //if line height "auto" in Photoshop
+  +max(1199)
+    padding-top: 60px
+
+*::placeholder
+  color: inherit
+  opacity: 1
+  transition: $tr
+*:focus::placeholder
+  opacity: 0
+*::selection
+  color: #fff
+  background-color: $green
+
+// body input:focus:required:invalid,
+// body textarea:focus:required:invalid
+//   color: #666
+// body input:required:valid,
+// body textarea:required:valid
+//   color: #666
+
+*
+  box-sizing: border-box
+  outline: none !important
+
+//.clearfix
+  *zoom: 1
+  &::before, &::after
+    content: ""
+    display: table
+  &::after
+    clear: both
+
+//.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+svg
+  display: inline-block
+  transition: fill .25s linear
+img
+  max-width: 100%
+  height: auto
+img.lazy // добавления такого класса скрывает значок битой картинки пока картинка не загружена
+  display: none
+br
+  line-height: 0
+  font-size: 0
+a, input, button
+  color: inherit
+  outline: none
+  border: none
+  box-sizing: border-box
+  background: transparent
+  text-decoration: none
+  &:hover
+    outline: none
+    // color: inherit
+    text-decoration: none
+  &:focus
+    outline: none
+    // color: inherit
+    text-decoration: none
+  &:active
+    outline: none
+    // color: inherit
+    text-decoration: none
+a
+  color: $green
+  text-decoration: underline
+  // transition: color .25s linear, background .25s linear
+  // &:hover
+    color: #fff
+    background: #0275d8
+    text-decoration: underline
+input,textarea
+  border: 1px solid #000
+select
+  outline: none
+button
+  cursor: pointer
+label
+  cursor: pointer
+  user-select: none //запрещает выделения при клике
+  //&:active
+    //user-select: none //Подпись, выделяемая при клике извне
+  &.error
+    color: red
+textarea
+  resize: none //запрещает изменения размера мишью
+  outline: none
+  color: inherit
+ul
+  padding: 0
+  list-style-type: none
+  li
+    position: relative
+    margin: 20px 0
+    padding-left: 22px
+    &::before
+      content: ''
+      position: absolute
+      top: 11px
+      left: 0
+      +size(12)
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M.077 5.025C.04 5.344 0 5.663 0 6.02c0 1.675.656 3.19 1.737 4.266.81-1.794 1.929-3.428 3.473-4.585-1.351-.717-3.628-1.196-5.133-.677zM11.848 4.505C11.231 1.874 8.954 0 6.021 0 3.397 0 1.275 1.555.426 3.748c1.93-.359 4.399.279 5.904 1.276 1.428-.718 3.28-1.037 5.518-.519zM5.98 12C9.414 12 12 9.33 12 5.98v-.24c-4.592-1.235-7.68 1.117-9.416 5.264.965.638 2.122.996 3.396.996z' fill='%23009846'/%3E%3C/svg%3E")
+ol
+  padding: 0
+  list-style-type: none
+  counter-reset: section
+  li
+    position: relative
+    margin: 20px 0
+    padding-left: 36px
+    &::before
+      content: counter(section)
+      counter-increment: section
+      position: absolute
+      top: 4px
+      left: 0
+      +size(26)
+      padding-top: 2px
+      text-align: center
+      color: #fff
+      font-size: 18px
+      font-weight: 800
+      line-height: 1
+      background: $green
+      border-radius: 50%
+h1,h2,h3,h4,h5,h6
+  margin: 0
+  font-weight: normal
+  line-height: 1.3
+  font-weight: bold
+  text-transform: uppercase
+  word-break: break-word
+h1
+  font-size: 60px
+  line-height: 1.26
+  font-weight: 800
+  +max(576)
+    font-size: 34px
+h2
+  font-size: 44px
+  line-height: 1.26
+  font-weight: 800
+  +max(576)
+    font-size: 29px
+h3
+  font-size: 33px
+  +lh(50,34)
+  +max(576)
+    font-size: 26px
+h4
+  font-size: 24px
+  +lh(36,24)
+  +max(576)
+    font-size: 21px
+h5
+  font-size: 20px
+  +lh(30,20)
+  +max(576)
+    font-size: 19px
+h6
+  font-size: 14px
+  margin-bottom: 10px
+  text-transform: initial
+p
+  margin: 40px 0
+
+.float-right
+  float: right
+
+.hidden
+  display: none
+.table-wrapper
+  margin: 40px 0
+  overflow: auto
+  // scrollbar-color: #458245 #714826
+  // scrollbar-width: 14px
+  border-radius: 24px
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+table
+  width: 100%
+  border-collapse: collapse
+  border-spacing: 0
+  overflow: hidden
+  th
+    text-align: left
+  th,td
+    padding: 2.3% 4.7%
+    +max(768)
+      padding: 20px 15px
+  td
+    padding-top: 1.3%
+    padding-bottom: 1.3%
+    +max(768)
+      padding: 15px
+  tr
+    &:nth-child(odd)
+      background: #F4F7F6
+    &:first-child
+      color: #fff
+      background: $green
+  +max(991)
+    th,td
+      padding: 15px 10px
+  +max(576)
+    width: 600px
+// фикс бага ?? с случайной анимацией перелистывания цифр
+//.flip-clock-wrapper ul.play li.flip-clock-active
+  animation: none
+
+.btn
+  position: relative
+  z-index: 1
+  max-width: 260px
+  width: 100%
+  height: 60px
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  padding: 5px
+  padding-bottom: 9px
+  text-align: center
+  cursor: pointer
+  font-size: 20px
+  color: #fff
+  font-weight: 500
+  text-decoration: none
+  user-select: none
+  background: $green
+  transition: $tr
+  box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.1)
+  border-radius: 12px
+  &:not(.btn--empty)
+    +blick
+    &:hover
+      background: darken($green, 3%)
+  svg
+    +size(20)
+    flex-shrink: 0
+    margin-bottom: -4px
+    margin-left: 10px
+    fill: currentColor
+.btn--long
+  max-width: 315px
+  height: 50px
+
+.btn--sm
+  max-width: 240px
+  height: 40px
+  font-size: 16px
+  svg
+    +size(24)
+    flex-shrink: 0
+    margin-right: 8px
+    margin-left: 0
+.btn--empty
+  color: $green
+  background: #FFFFFF
+  box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.05), 0px 2px 20px rgba(0, 30, 14, 0.05)
+  border: 1px solid $green
+  &:hover
+    box-shadow: none
+
+
+
+//.counter
+  display: flex
+  font-size: 40px
+  font-weight: 700
+  .counter__item
+    display: flex
+    align-items: center
+  .counter__item-info
+    margin: 0 10px
+    text-align: center
+  .counter__item-numb
+
+  .counter__item-title
+    // font-size: 30px
+  .counter__item-dots
+    font-size: 0
+    animation: blinking 1s infinite cubic-bezier(1,-1.29, 1, 1)
+    svg
+      width: 20px
+      height: 60px
+      fill: currentColor
+
+//@keyframes blinking
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 0
+// count style end
+
+//animation: sliding infinite ease 3s
+@keyframes sliding
+  0%,to
+    transform: translateY(0)
+
+  50%
+    transform: translateY(20px)
+
+.wrapper
+  min-height: calc(100vh - 566px)
+
+.section
+  padding: 70px 0
+
+.sl-btn
+  cursor: pointer
+
+
+[class*="--aic"]
+  align-items: center
+
+$mt: 5
+@while $mt <= 150
+  .mt-#{$mt}
+    margin-top: $mt + px
+  $mt: $mt + 5
+
+$mb: 5
+@while $mb <= 150
+  .mb-#{$mb}
+    margin-bottom: $mb + px
+  $mb: $mb + 5
+
+$pt: 5
+@while $pt <= 150
+  .pt-#{$pt}
+    padding-top: $pt + px
+  $pt: $pt + 5
+
+$pb: 5
+@while $pb <= 150
+  .pb-#{$pb}
+    padding-bottom: $pb + px
+  $pb: $pb + 5
+
+
+
+.s-content
+  min-height: calc(100vh - 200px)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 50px 0
+  text-align: center
+  +bg
+  +max(991)
+    padding: 80px 0
+    min-height: 0
+
+
+.s-content__ico
+  margin-bottom: 50px
+  font-size: 0
+  svg
+    +size(150)
+    fill: red
+
+.s-content__404
+.s-content__ico-text
+  text-shadow: 0 11px 21px rgba(red, 0.4)
+  color: red
+  font-size: 232px
+  font-weight: 700
+  line-height: 1
+  text-transform: uppercase
+  +max(991)
+    font-size: 162px
+  +max(576)
+    font-size: 140px
+
+.s-content__title
+  margin-bottom: 40px
+  font-size: 40px
+  font-weight: 700
+  line-height: 1.4
+  text-transform: uppercase
+  +max(991)
+    margin-bottom: 20px
+    font-size: 23px
+    font-weight: 700
+    line-height: 1.39
+.s-content__subtitle
+  margin: 40px 0
+  font-size: 20px
+  line-height: 1.3
+  +max(991)
+    margin-top: 20px
+    font-size: 17px
+
+.s-content__acton
+  margin-top: 50px
+  +max(991)
+    margin-top: 40px
+
+.svg--logo
+  fill: $green
+
+
+.sc
+  display: flex
+  align-items: center
+  margin-left: -10px
+  margin-right: -10px
+  padding-top: 15px
+  font-size: 0
+.sc__item
+  margin: 10px
+  svg
+    +trs
+  &:hover
+    svg
+      filter: drop-shadow(0px 2px 5px rgba(0, 30, 14, 0.2))
+.sc--boxed
+  align-items: stretch
+  .sc__item
+    +size(60)
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 0
+    margin-bottom: 0
+    // padding: 10px
+    box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.05), 0px 2px 20px rgba(0, 30, 14, 0.05)
+    border-radius: 12px
+    +trs
+    &:hover
+      box-shadow: none
+
+
+
+.fly-form
+  +min(992)
+    position: fixed
+    // top: 50%
+    bottom: 50px
+    right: 30px
+    z-index: 99
+    // transform: translateY(-50%)
+  width: 100%
+  max-width: 340px
+  padding: 30px 25px 35px
+  font-weight: 500
+  font-size: 16px
+  line-height: 1.3
+  background: #FFFFFF
+  box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.05), 0px 2px 20px rgba(0, 30, 14, 0.05)
+  border-radius: 12px
+  opacity: 0
+  visibility: hidden
+  transition: opacity .25s
+  h4
+    margin: 0
+  p
+    margin: 10px 0
+  .btn
+    width: 100%
+    max-width: 100%
+  &.active
+    opacity: 1
+    visibility: visible
+  input
+    margin: 20px 0
+  .fancybox-close-small
+    display: none
+  // +max(420)
+    padding: 20px 10px
+    right: 15px
+    max-width: calc(100% - 30px)
+  +max(991)
+    display: none
+    opacity: 1
+    visibility: visible
+    overflow: initial
+.fly-form__close
+  position: absolute
+  top: -18px
+  right: 8px
+  +size(36)
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  font-size: 0
+  background: #009846
+  box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.1)
+  border-radius: 12px
+  // transform: translateY(-50%)
+  transform: scale(1)
+  +trs(transform)
+  svg
+    fill: #fff
+    pointer-events: none
+  &:hover
+    transform: scale(1.06)
+
+.fly-form-toggle
+  position: fixed
+  right: 10px
+  bottom: 60px
+  z-index: 20
+  max-width: 290px
+  width: 100%
+  display: none
+  align-items: center
+  padding: 7px
+  padding-left: 0
+  font-size: 16px
+  font-weight: 800
+  text-transform: uppercase
+  transform: translateX(260px)
+  // background: #FFFFFF
+  // box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.05), 0px 2px 20px rgba(0, 30, 14, 0.05)
+  border-radius: 12px
+  +trs
+  a
+    padding-left: 40px
+    text-decoration: none
+    color: inherit
+    // background: silver
+  +max(991)
+    display: flex
+  &.active
+    // display: flex
+    background: #fff
+    box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.05), 0px 2px 20px rgba(0, 30, 14, 0.05)
+    transform: translateX(0)
+  +max(400)
+    max-width: 250px
+    font-size: 14px
+    transform: translateX(231px)
+    a
+      padding-left: 30px
+.fly-form-toggle__icon
+  position: absolute
+  top: 0
+  left: -30px
+  bottom: 0
+  +size(60)
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: auto
+  border-radius: 50%
+  background: $green
+  border: 2px solid #fff
+  svg
+    +size(24)
+    fill: #fff
+  +max(400)
+    left: -30px
+    +size(54)
+.fly-form-toggle__close
+  +size(36)
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-left: auto
+  color: #fff
+  cursor: pointer
+  background: $green
+  box-shadow: 0px 2px 20px rgba(0, 30, 14, 0.1)
+  border-radius: 10px
+  svg
+    +size(16)
+    fill: currentColor
+input
+  height: 50px
+  width: 100%
+  display: block
+  margin: 10px 0
+  padding: 5px 20px
+  background: #FFFFFF
+  color: $def
+  border: 1px solid $grey
+  box-sizing: border-box
+  border-radius: 12px
+  &::placeholder
+    color: $grey
+
+.breadcrumbs
+  margin: 30px 0 60px
+  color: $grey
+  font-weight: 500
+  font-size: 14px
+  +lh(21,14)
+  ul
+    display: flex
+    align-items: baseline
+    margin: 0
+    li
+      display: flex
+      align-items: baseline
+      margin: 0
+      padding: 0
+      &::before
+        display: none
+      &::after
+        content: ''
+        width: 10px
+        height: 8px
+        display: inline-block
+        margin: 0 5px
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.886 3.527L2.06.7a.667.667 0 10-.946.94L3.473 4l-2.36 2.36a.667.667 0 00.217 1.084.667.667 0 00.73-.144l2.826-2.827a.667.667 0 000-.946z' fill='%23BAC2BD'/%3E%3C/svg%3E")
+      &:last-child
+        &::after
+          display: none
+  a
+    color: $def
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+
+
+
+.nice-select
+  position: relative
+  max-width: 330px
+  width: 100%
+  height: 50px
+  display: flex
+  align-items: center
+  float: none
+  line-height: 1
+  color: $def
+  font-size: 16px
+  font-weight: 500
+  border: 1px solid #E1E6E3
+  border-radius: 12px
+
+  .list
+    right: 0
+    top: calc(100% + 3px)
+    margin: 0
+    border-radius: 12px
+    // display: block
+    // visibility: visible
+    // opacity: 1
+    transform: scale(1) translateY(-21px)
+    li
+      margin: 0
+      padding: 5px 10px
+      &::before
+        display: none
+  &::after
+    right: 18px
+
+
+.form__item
+  position: relative
+  display: block
+  margin-bottom: 18px
+  font-size: 16px
+  color: $grey
+  label
+    position: absolute
+    top: 50%
+    left: 18px
+    padding: 2px 5px
+    line-height: 1
+    cursor: text
+    transform: translateY(-50%)
+    transition: $tr
+    background: #fff
+  input,textarea
+    display: block
+    width: 100%
+    height: 50px
+    margin: 0
+    padding: 0 20px
+    color: $def
+    border: none
+    border: 1px solid #E1E6E3
+    transition: $tr
+    border-radius: 12px
+  input:-webkit-autofill
+    box-shadow: inset 0 0 0 50px #fff
+.form__item--focus
+  label
+    top: -11px
+    font-size: 14px
+    transform: translateY(0)
+.form__item--textarea
+  height: 186px
+  textarea
+    width: 100%
+    height: 100%
+    padding: 20px
+  label
+    top: 16px
+    transform: none
+  &.form__item--focus
+    label
+      top: -11px
+.form__action
+  margin-top: 18px
+  .btn
+    max-width: 100%
+
+.form-row
+  margin-left: -10px
+  margin-right: -10px
+  .form__item
+    &:last-child
+      margin-bottom: 0
+
+
+
+.form-row>.col, .form-row>[class*=col-]
+  padding-left: 10px
+  padding-right: 10px
+
+
+
+.rating
+  display: flex
+  align-items: center
+  font-size: 16px
+  svg
+    +size(20)
+    margin-right: 3px
+    fill: $orange
+  a
+    color: currentcolor
+.rating__icons
+  font-size: 0
+
+.rating__desc
+  margin-left: 7px
+  line-height: 1.3
+  font-size: 14px
+  color: $grey
+
+.prod-id 
+  font-size: 16px
+  line-height: 1.3
+  text-align: right
+  span
+    color: $grey
+  +max(575)
+    margin-top: 10px
+    text-align: left
+
+.vote
+  display: flex
+  font-weight: 600
+  font-size: 16px
+  svg
+    +size(24)
+    flex-shrink: 0
+    margin-right: 7px
+    fill: currentcolor
+    +trs(fill)
+
+.vote__item
+  display: flex
+  align-items: center
+  &:not(:first-child)
+    margin-left: 30px
+  text-decoration: none
+  color: $grey
+  +trs(color)
+  &:hover
+    color: $green
+  
+.more-link
+  margin-top: 30px
+  text-align: center
+
+.desc
+  h4
+    margin: 40px 0
+    text-transform: initial
+  p
+    h4
+      margin: 0 
+
+.char
+  line-height: 1.3
+  b
+    font-weight: 500
+  h4
+    margin-top: 50px
+  +max(768)
+    font-size: 15px
+.char__item
+  display: flex
+  align-items: baseline
+  margin-top: 23px
+  span
+    flex-grow: 1
+    margin: 0 6px
+    padding: 0 5px
+    border-bottom: 1px solid #E6E9E7
+  b
+    &:last-of-type
+      white-space: nowrap
+
+
+
+.float-left
+  float: left
+  margin-right: 20px
+  margin-bottom: 10px
+
+
+
+.not-found
+  padding: 100px 0
+  +min(1200)
+    h1
+      font-size: 50px
+  .btn
+    margin-top: 100px
+    +max(1200)
+      margin-top: 10px
+  +max(991)
+    padding: 45px 0
+.not-found__title
+  font-weight: bold
+  font-size: 24px
+  line-height: 1.5
+  text-transform: uppercase
+  color: $orange
+  +max(575)
+    margin-bottom: 15px
+.not-found__img
+  font-size: 0
+  +max(991)
+    margin-top: 25px
+    text-align: center
+
+
+
+.pagination
+  margin: 0
+  margin-top: 25px
+  padding: 0
+  color: $green
+  font-size: 16px
+  font-weight: 500
+  li
+    // margin: 0
+    // padding: 0
+    &::before
+      display: none
+  svg
+    +size(10)
+    fill: currentColor
+.page-item
+  margin: 2px
+  padding: 0
+  &:hover
+    .page-link
+      color: #fff
+      background: $green
+  &.active
+    .page-link
+      color: $green
+      border-color: $green
+      background: #fff
+  &.disabled
+    .page-link
+      border-color: #fff
+
+
+
+.page-link
+  +size(40)
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 4px
+  color: currentColor
+  text-decoration: none
+  outline: none
+  font-weight: inherit
+  background: #FFFFFF
+  box-shadow: 0px 4px 30px rgba(0, 30, 14, 0.1)
+  border-radius: 12px !important
+  border: 1px solid #fff
+  transition: color .25s linear, background .25s linear
+  +max(380)
+    +size(36)
+.page-link:focus
+  box-shadow: none
+
+
+
+/*! checkbox and radio input styling  */
+
+.label-group
+  position: relative
+  display: block
+  padding: 4px
+  padding-left: 30px
+  font-size: 16px
+  cursor: pointer
+  user-select: none
+  input
+    position: absolute
+    opacity: 0
+    height: 0
+    width: 0
+
+
+  // input:checked ~ .label-group__icon
+    background-color: green
+    border-color: green
+
+  input:checked ~ .label-group__icon::after
+    opacity: 1
+    transform: scale(1)
+
+  // &:hover 
+    input ~ .label-group__icon
+      background-color: green
+
+.label-group__icon
+  position: absolute
+  top: 8px
+  left: 0
+  +size(20)
+  display: flex
+  justify-content: center
+  align-items: center
+  background: #FFFFFF
+  border: 1px solid #E1E6E3
+  border-radius: 6px
+  +trs
+  &::after
+    content: ""
+    // position: absolute
+    // top: 50%
+    // left: 50%
+    +size(14)
+    margin: auto
+    // border: 2px solid white
+    // border: 0
+    transform: scale(0)
+    opacity: 0
+    +trs
+    background: $green
+    border-radius: 4px
+
+
+.label-group--radio
+  .label-group__icon
+    top: 7px
+    border-radius: 50%
+    &::after
+      +size(14)
+      margin: auto
+      background: $green
+      border-radius: 50%
+
+
+/*! checkbox and radio input styling end  */
+
+
+
+.range-slider
+
+.range-slider__contaroll
+  display: flex
+  margin-left: -3px
+  margin-right: -3px
+  font-size: 15px
+  input,button
+    height: 40px
+    margin: 0 3px
+  input
+    padding: 5px 10px
+    flex-grow: 1
+    pointer-events: none
+  button
+    width: 45px
+    flex-shrink: 0
+    padding: 5px
+    font-size: 16px
+    font-weight: 500
+    border-radius: 8px
+    color: #fff
+    background: $green
+
+
+.irs
+  // background: silver
+  height: 10px
+  margin-top: 20px
+  .irs-line
+    top: 0
+    height: 6px
+    border-radius: 3px
+    background: #EAEEEC
+
+  .irs-bar
+    top: 0
+    height: 6px
+    background: $green
+  .irs-handle
+    top: -9px
+    cursor: pointer
+    border: 5px solid $green
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.widget_list
+  li
+    &::before
+      display: none
+
+
+
+// 

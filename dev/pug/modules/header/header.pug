@@ -1,0 +1,155 @@
+mixin header(name)
+  - name = name || ''
+  header(class="header " + name)
+    .header__top
+      .container
+        .row
+          .col-12
+            .header__top-box
+              .search-toggle
+                +svg('search')
+              a.logo(href="#")
+                +svg('logo')
+              .header__top-search
+                form.search(action="#")
+                  .search__field
+                    button
+                      +svg('search')
+                    input(type="text", placeholder="Пошук")
+                    .search-close
+                      +svg('cross')
+              .header__contact
+                a.phone(href="tel:+380504879900") +38 (050) 487 99 00
+                +lang
+              .hamburger.hamburger--js: span
+    .header__bot
+      .container
+        .row
+          .col-12
+            .header__bot-box
+              a.logo(href="#")
+                +logo_mob
+              .header__bot-search
+              nav.nav
+                ul
+                  li
+                    a(href="#") Техніка
+                    ul
+                      li
+                        a(href="#") Техніка Техніка Техніка
+                      li
+                        a(href="#") Техніка 2
+                      li
+                        a(href="#") Техніка 3
+
+                  li
+                    a(href="#") Агротехнології
+                    ul
+                      li
+                        a(href="#") Насіння
+                        ul
+                          li
+                            a(href="#") АгротехнологіїАгротехнології
+                          li
+                            a(href="#") Агротехнології 2
+                          li
+                            a(href="#") Агротехнології 3
+                            ul
+                              li
+                                a(href="#") Агротехнології 1
+                              li
+                                a(href="#") Агротехнології 2
+                              li
+                                a(href="#") Агротехнології 3
+                              li
+                                a(href="#") Агротехнології 4
+                          li
+                            a(href="#") Агротехнології 4
+                      li
+                        a(href="#") ЗЗР
+                      li
+                        a(href="#") Добрива
+                      li
+                        a(href="#") Агросервіс
+
+                  li
+                    a(href="#") Запчастини
+                    ul
+                      li
+                        a(href="#") Запчастини 1
+                      li
+                        a(href="#") Запчастини 2
+                      li
+                        a(href="#") Запчастини 3
+
+                  li
+                    a(href="#") Сервіс
+                    ul
+                      li
+                        a(href="#") Сервіс 1
+                      li
+                        a(href="#") Сервіс 2
+                      li
+                        a(href="#") Сервіс 3
+
+                  li
+                    a(href="#") Про нас
+
+                  li
+                    a(href="#") Партнери
+
+                  li
+                    a(href="#") Контакти
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-
